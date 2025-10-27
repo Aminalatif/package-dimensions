@@ -14,6 +14,10 @@ def find_package_dimensions(item_length, item_width, item_height, padding=2):
 length = float(input("Enter item length: "))
 width = float(input("Enter item width: "))
 height = float(input("Enter item height: "))
+# Validate input
+if length <= 0 or width <= 0 or height <= 0:
+    print("Error: Dimensions must be positive numbers!")
+else:
+    pkg_length, pkg_width, pkg_height = find_package_dimensions(length, width, height)
+    print(f"Package dimensions: {pkg_length} x {pkg_width} x {pkg_height}")
 
-pkg_length, pkg_width, pkg_height = find_package_dimensions(length, width, height)
-print(f"Package dimensions: {pkg_length} x {pkg_width} x {pkg_height}")
